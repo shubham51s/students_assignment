@@ -1,0 +1,51 @@
+.mainContainer {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+
+.mainContent {
+  width: 80%;
+  margin: 10px;
+  /* background-color: ; */
+}
+
+.headerMain {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.mainHeading {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.addBtn {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.addBtn {
+  transition: all 0.4s ease;
+}
+
+.addBtn:hover {
+  color: black;
+  background-color: white;
+  border-color: 1px solid black;
+}
