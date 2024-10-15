@@ -14,7 +14,6 @@ function HomePage() {
         </div>
         <SearchComp />
         <FiltersComp />
-        <div>Sort by</div>
         <AllStudentsComp />
       </div>
     </div>
