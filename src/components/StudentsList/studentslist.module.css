@@ -13,7 +13,6 @@
   background-color: rgb(24, 24, 24);
   height: 44px;
   font-size: 18px;
-  font-weight: white;
   /* border: 1px solid rgba(255, 255, 255, 0.3); */
   border: 1px solid #6c757d;
   color: #f8f8ff;
@@ -64,7 +63,6 @@
 
 .contentMain {
   width: 100%;
-  /* background-color: rgb(50, 49, 49); */
   background-color: rgb(30, 28, 28);
   display: flex;
   justify-content: center;
@@ -140,4 +138,15 @@
   align-items: center;
   margin-top: 30px;
   font-size: 24px;
+}
+
+@media screen and (max-width: 800px) {
+  .headingMain {
+    font-size: 14px;
+  }
+
+  .contentMain {
+    font-size: 16px;
+    font-weight: 300;
+  }
 }

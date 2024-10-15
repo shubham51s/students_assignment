@@ -26,7 +26,7 @@ function FiltersComp() {
     <div className={style.mainContainer}>
       <div className={style.filterContainer}>
         <div>Filter</div>
-        <FormControl sx={{ m: 1, minWidth: 180 }}>
+        <FormControl sx={{ m: 1 }}>
           <Select
             value={filter}
             onChange={handleChange}
@@ -42,7 +42,7 @@ function FiltersComp() {
       </div>
       <div className={style.filterContainer}>
         <div>Sort</div>
-        <FormControl sx={{ m: 1, minWidth: 180 }}>
+        <FormControl sx={{ m: 1 }}>
           <Select
             value={sort}
             onChange={handleSortChange}

@@ -26,7 +26,7 @@ function HomePage() {
     <div className={style.mainContainer}>
       <div className={style.mainContent}>
         <div className={style.headerMain}>
-          <h1 className={style.mainHeading}>Students Data</h1>
+          <h1 className={style.mainHeading}>Students Record Management</h1>
           <button
             className={style.addBtn}
             onClick={(e) => handleAddBtnClick(e)}

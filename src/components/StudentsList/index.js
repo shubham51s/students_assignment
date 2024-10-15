@@ -13,7 +13,7 @@ function AllStudentsComp() {
         <div className={style.name}>NAME</div>
         <div className={style.age}>AGE</div>
         <div className={style.grade}>GRADE</div>
-        <div className={style.status}>ENR. STATUS</div>
+        <div className={style.status}>STATUS</div>
         <div className={style.edit}></div>
       </div>
       {/* Result */}
