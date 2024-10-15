@@ -1,5 +1,11 @@
 .mainContainer {
   width: 30%;
+  padding-bottom: 30px;
+}
+
+.borderBtn {
+  width: 100%;
+  border: 1px solid red;
 }
 
 .inputContainer {

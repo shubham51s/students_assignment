@@ -2,6 +2,7 @@ import React from "react";
 import style from "./homepage.module.css";
 import SearchComp from "../components/Search";
 import AllStudentsComp from "../components/StudentsList";
+import FiltersComp from "../components/Filters";
 
 function HomePage() {
   return (
@@ -12,7 +13,7 @@ function HomePage() {
           <button className={style.addBtn}>Add New Student</button>
         </div>
         <SearchComp />
-        <div>Filter</div>
+        <FiltersComp />
         <div>Sort by</div>
         <AllStudentsComp />
       </div>
