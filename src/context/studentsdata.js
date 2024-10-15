@@ -5,10 +5,21 @@ export default StudentContext;
 
 export const StudentProvider = ({ children }) => {
   const [allStudents, setAllStudents] = useState(studentsData);
-  const [oneStudent, setOneStudent] = useState([{}]);
+  const [isModalOpen, setIsModal] = useState(false);
+  const [addNewStudent, setAddNewStudent] = useState(false);
+  const [studentOldData, setStudentData] = useState({});
   return (
     <StudentContext.Provider
-      value={{ allStudents, setAllStudents, oneStudent, setOneStudent }}
+      value={{
+        allStudents,
+        setAllStudents,
+        isModalOpen,
+        setIsModal,
+        addNewStudent,
+        setAddNewStudent,
+        studentOldData,
+        setStudentData,
+      }}
     >
       {children}
     </StudentContext.Provider>
