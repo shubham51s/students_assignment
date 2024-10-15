@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "./filters.module.css";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import StudentContext from "../../context/studentsdata";
 
 function FiltersComp() {
+  const { validateAllConditions } = useContext(StudentContext);
   const [filter, setFilter] = useState(1);
-  const [sort, setSort] = useState(0);
+  const [sort, setSort] = useState(1);
 
   const handleChange = (e) => {
-    setFilter(e.target.value);
+    const val = e.target.value;
+    setFilter(val);
+    validateAllConditions(val, 2);
   };
 
   const handleSortChange = (e) => {
-    setSort(e.target.value);
+    const val = e.target.value;
+    setSort(val);
+    validateAllConditions(val, 3);
   };
 
   return (
@@ -26,7 +32,7 @@ function FiltersComp() {
             onChange={handleChange}
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
-            sx={{ height: "40px" }}
+            sx={{ height: "40px", color: "white", border: "1px solid white" }}
           >
             <MenuItem value={1}>All Students</MenuItem>
             <MenuItem value={2}>Active Students</MenuItem>
@@ -42,14 +48,12 @@ function FiltersComp() {
             onChange={handleSortChange}
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
-            sx={{ height: "40px" }}
+            sx={{ height: "40px", color: "white", border: "1px solid white" }}
           >
-            <MenuItem value={0}>
+            <MenuItem value={1}>
               <em>Default</em>
             </MenuItem>
-            <MenuItem value={1}>Name</MenuItem>
             <MenuItem value={2}>Age</MenuItem>
-            <MenuItem value={3}>Grade</MenuItem>
           </Select>
         </FormControl>
       </div>

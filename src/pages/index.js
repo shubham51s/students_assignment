@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import style from "./homepage.module.css";
 import SearchComp from "../components/Search";
 import AllStudentsComp from "../components/StudentsList";
@@ -7,7 +7,7 @@ import EditStudentDataComp from "../components/EditStudentData";
 import StudentContext from "../context/studentsdata";
 
 function HomePage() {
-  const { isModalOpen, setIsModal, setAddNewStudent } =
+  const { isModalOpen, setIsModal, setAddNewStudent, setAllStudents } =
     useContext(StudentContext);
 
   const handleAddBtnClick = (e) => {
@@ -15,6 +15,12 @@ function HomePage() {
     setAddNewStudent(true);
     setIsModal(true);
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("allStudents")) {
+      setAllStudents(JSON.parse(localStorage.getItem("allStudents")));
+    }
+  }, []);
 
   return (
     <div className={style.mainContainer}>

@@ -11,7 +11,7 @@ function AddNewStudentComp() {
   const [age, setAge] = useState("");
   const [id, setId] = useState("");
   const [active, setIsActive] = useState(true);
-  const [grade, setGrade] = useState("");
+  const [grade, setGrade] = useState("A");
   const [nameErr, setNameErr] = useState(false);
   const [ageErr, setAgeErr] = useState(false);
   const [idErr, setIdErr] = useState(false);
@@ -34,7 +34,6 @@ function AddNewStudentComp() {
   };
 
   const handleActiveChange = (val) => {
-    console.log("active: ", val);
     setIsActive(val);
   };
 
@@ -60,8 +59,8 @@ function AddNewStudentComp() {
         setIdErr(true);
         setDuplicateId(true);
       } else {
-        setAllStudents((prev) => [
-          ...prev,
+        const updatedStudents = [
+          ...allStudents,
           {
             id: Number(id),
             name: name,
@@ -69,7 +68,9 @@ function AddNewStudentComp() {
             Grade: grade,
             EnrollmentStaus: active,
           },
-        ]);
+        ];
+        setAllStudents(updatedStudents);
+        localStorage.setItem("allStudents", JSON.stringify(updatedStudents));
         setIsModal(false);
       }
     }

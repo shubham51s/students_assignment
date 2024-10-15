@@ -17,9 +17,13 @@ function AllStudentsComp() {
         <div className={style.edit}></div>
       </div>
       {/* Result */}
-      {allStudents.map((item) => (
-        <StudentListComp key={item.id} item={item} />
-      ))}
+      {allStudents.length >= 1 &&
+        allStudents.map((item) => (
+          <StudentListComp key={item.id} item={item} />
+        ))}
+      {allStudents.length <= 0 && (
+        <div className={style.noData}>No Data Found</div>
+      )}
     </div>
   );
 }

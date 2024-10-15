@@ -8,9 +8,9 @@ function StudentListComp({ item }) {
   const {
     setAddNewStudent,
     setIsModal,
-    setStudentData,
     allStudents,
     setAllStudents,
+    setStudentData,
   } = useContext(StudentContext);
 
   const handleEditClick = (e) => {
@@ -21,7 +21,9 @@ function StudentListComp({ item }) {
   };
 
   const handleDeleteClick = (id) => {
-    setAllStudents(allStudents.filter((item) => item.id !== id));
+    const updatedResult = allStudents.filter((item) => item.id !== id);
+    setAllStudents(updatedResult);
+    localStorage.setItem("allStudents", JSON.stringify(updatedResult));
   };
 
   return (

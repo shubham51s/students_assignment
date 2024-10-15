@@ -1,6 +1,6 @@
 .mainContainer {
   width: 30%;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 .borderBtn {
@@ -24,7 +24,8 @@
   width: 100%;
   border: none;
   outline: none;
-  height: 30px;
+  height: 40px;
+  font-size: 16px;
 }
 
 .searchIcon {

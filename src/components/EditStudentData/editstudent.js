@@ -41,19 +41,20 @@ function EditStudentDetailsComp() {
         setAgeErr(true);
       }
     } else {
-      setAllStudents(
-        allStudents.map((item) =>
-          item.id !== studentOldData.id
-            ? item
-            : {
-                id: studentOldData.id,
-                name: name,
-                age: age,
-                Grade: grade,
-                EnrollmentStaus: active,
-              }
-        )
+      const updatedResult = allStudents.map((item) =>
+        item.id !== studentOldData.id
+          ? item
+          : {
+              id: studentOldData.id,
+              name: name,
+              age: age,
+              Grade: grade,
+              EnrollmentStaus: active,
+            }
       );
+
+      setAllStudents(updatedResult);
+      localStorage.setItem("allStudents", JSON.stringify(updatedResult));
       setIsModal(false);
     }
   };
@@ -109,7 +110,6 @@ function EditStudentDetailsComp() {
               <option value={"D"}>D</option>
               <option value={"E"}>E</option>
             </select>
-            {/* <div className={style.errorMsg}>error</div> */}
           </div>
         </div>
         <div className={style.nameMain}>
